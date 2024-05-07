@@ -9,17 +9,21 @@ public class PlayerMoveByMouse : MonoBehaviour
     private RaycastHit raycastHit;
     private NavMeshAgent navMeshAgent;
     private Transform transform;
+    public GameObject prefab_Arrow;
+    private Animator animator;
 
     void Start()
     {
         transform = gameObject.GetComponent<Transform>();
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        IdleOrRun();
     }
 
     private void Move()
@@ -34,8 +38,38 @@ public class PlayerMoveByMouse : MonoBehaviour
             {
                 //设置目的地
                 navMeshAgent.SetDestination(raycastHit.point);
+                //生成箭头特效
+                CreateArrow(raycastHit.point);
             }
         }
       
     }
+
+    /// <summary>
+    /// 创建箭头特效
+    /// </summary>
+    /// <param name="point"></param>
+    private void CreateArrow(Vector3 point)
+    {
+        point = point + new Vector3(0, 0.5f, 0);
+        GameObject ga = Instantiate(prefab_Arrow, point, Quaternion.identity);
+        ga.GetComponent<ArrowEffectManager>().PlayEffects();
+        Destroy(ga, 1);
+    }
+
+    /// <summary>
+    /// 切换常态和跑步
+    /// </summary>
+    private void IdleOrRun()
+    {
+        if (Mathf.Abs(navMeshAgent.remainingDistance) >= 0.1f)
+        {
+            animator.SetBool("Run", true);
+        }
+        else
+        {
+            animator.SetBool("Run", false);
+        }
+    }
+
 }
