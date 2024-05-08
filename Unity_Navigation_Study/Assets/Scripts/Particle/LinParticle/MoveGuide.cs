@@ -51,15 +51,15 @@ public class MoveGuide : MonoBehaviour
         int index = (int)id;
         if (index == 0)
         {
-            GameObject.Destroy(targetEffect);
-            GameObject.Destroy(lineEffect);
+            Destroy(targetEffect);
+            Destroy(lineEffect);
             //在玩家和和点位置划线
             CreateEffect(Player.transform.position, point1.position);
         }
         else if (index == 1)
         {
-            GameObject.Destroy(targetEffect);
-            GameObject.Destroy(lineEffect);
+            Destroy(targetEffect);
+            Destroy(lineEffect);
         }
     }
 }
