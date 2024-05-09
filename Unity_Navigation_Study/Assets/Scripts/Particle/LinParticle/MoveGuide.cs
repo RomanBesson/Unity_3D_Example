@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 负责特效的生成
+/// </summary>
 public class MoveGuide : MonoBehaviour
 {
+   
     public GameObject Player; //玩家
     public GameObject prefab_LineEffect;    //引导线特效.
     public GameObject prefab_TargetEffect;  //目标点特效.
@@ -23,11 +27,6 @@ public class MoveGuide : MonoBehaviour
     }
 
    
-    void Update()
-    {
-
-    }
-
     /// <summary>
     /// 生成导航线
     /// </summary>
@@ -58,6 +57,8 @@ public class MoveGuide : MonoBehaviour
         }
         else if (index == 1)
         {
+            //打开大门1
+            HouseManager.Instance.ToWallOpen(1);
             Destroy(targetEffect);
             Destroy(lineEffect);
         }

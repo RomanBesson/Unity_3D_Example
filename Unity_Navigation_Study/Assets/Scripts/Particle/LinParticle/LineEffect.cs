@@ -1,9 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ÏßÁ÷¶¯¶¯»­
+/// çº¿æµåŠ¨åŠ¨ç”»
 /// </summary>
 public class LineEffect : MonoBehaviour
 {

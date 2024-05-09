@@ -1,20 +1,21 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// è§’è‰²è¿åŠ¨çš„æ§åˆ¶è„šæœ¬
+/// </summary>
 public class PlayerMoveByMouse : MonoBehaviour
 {
     private Ray ray;
     private RaycastHit raycastHit;
     private NavMeshAgent navMeshAgent;
-    private Transform transform;
     public GameObject prefab_Arrow;
     private Animator animator;
 
     void Start()
     {
-        transform = gameObject.GetComponent<Transform>();
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
@@ -28,17 +29,17 @@ public class PlayerMoveByMouse : MonoBehaviour
 
     private void Move()
     {
-        //»ñÈ¡Êó±êµã»÷Î»ÖÃ
+        //è·å–é¼ æ ‡ç‚¹å‡»ä½ç½®
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
   
-        //ÅĞ¶ÏÊÇ×ó¼üµã»÷Ö®ºóÔÙµ¼º½£¬·ñÔò»áÒ»Ö±¸ú×ÅÊó±ê
+        //åˆ¤æ–­æ˜¯å·¦é”®ç‚¹å‡»ä¹‹åå†å¯¼èˆªï¼Œå¦åˆ™ä¼šä¸€ç›´è·Ÿç€é¼ æ ‡
         if (Input.GetMouseButtonDown(0))
         {
             if (Physics.Raycast(ray, out raycastHit))
             {
-                //ÉèÖÃÄ¿µÄµØ
+                //è®¾ç½®ç›®çš„åœ°
                 navMeshAgent.SetDestination(raycastHit.point);
-                //Éú³É¼ıÍ·ÌØĞ§
+                //ç”Ÿæˆç®­å¤´ç‰¹æ•ˆ
                 CreateArrow(raycastHit.point);
             }
         }
@@ -46,7 +47,7 @@ public class PlayerMoveByMouse : MonoBehaviour
     }
 
     /// <summary>
-    /// ´´½¨¼ıÍ·ÌØĞ§
+    /// åˆ›å»ºç®­å¤´ç‰¹æ•ˆ
     /// </summary>
     /// <param name="point"></param>
     private void CreateArrow(Vector3 point)
@@ -58,7 +59,7 @@ public class PlayerMoveByMouse : MonoBehaviour
     }
 
     /// <summary>
-    /// ÇĞ»»³£Ì¬ºÍÅÜ²½
+    /// åˆ‡æ¢å¸¸æ€å’Œè·‘æ­¥
     /// </summary>
     private void IdleOrRun()
     {

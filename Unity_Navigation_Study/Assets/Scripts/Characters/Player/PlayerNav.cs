@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class PlayerNav : MonoBehaviour
 {
-    //»ñÈ¡
+    //è·å–
     private NavMeshAgent m_NavMeshAgent;
     private Transform end_Transform;
 
@@ -13,7 +13,7 @@ public class PlayerNav : MonoBehaviour
     {
         m_NavMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         end_Transform = GameObject.Find("End").GetComponent<Transform>();
-        //ÉèÖÃµ¼º½
+        //è®¾ç½®å¯¼èˆª
         m_NavMeshAgent.SetDestination(end_Transform.position);
     }
 }

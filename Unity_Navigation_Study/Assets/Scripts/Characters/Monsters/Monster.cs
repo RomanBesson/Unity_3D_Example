@@ -1,17 +1,22 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// è´Ÿè´£æ€ªç‰©çš„è·Ÿéšå¯¼èˆª
+/// </summary>
 public class Monster : MonoBehaviour
 {
     private NavMeshAgent m_NavMeshAgent;
 
-    private Transform player_Transform;     //³ÖÓĞÖ÷½ÇÄ£ĞÍµÄTransform.
+    private Transform player_Transform;     //æŒæœ‰ä¸»è§’æ¨¡å‹çš„Transform.
 
-    private float distance;                 //¾àÀë.
+    private float distance;                 //è·ç¦».
 
-    private bool alive = true;              //Ğ¡¹ÖµÄÒ»¸ö´æ»î×´Ì¬.
+    private bool alive = true;              //å°æ€ªçš„ä¸€ä¸ªå­˜æ´»çŠ¶æ€.
+
+    private Animator animator;
 
     public bool Alive
     {
@@ -19,17 +24,18 @@ public class Monster : MonoBehaviour
         set
         { 
             alive = value;
-            //¸æËßĞ¡¹Ö¹ÜÀíÆ÷¸üĞÂ
+            //å‘Šè¯‰å°æ€ªç®¡ç†å™¨æ›´æ–°
             SendMessageUpwards("UpdateMonsterList", gameObject);
         }
     }
     void Awake()
     {
+        animator = gameObject.GetComponent<Animator>();
         m_NavMeshAgent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     /// <summary>
-    /// ÉèÖÃÆğÊ¼Ä¿µÄµØÒÔ¼°Ğ¡¹Ö×·×Ù
+    /// è®¾ç½®èµ·å§‹ç›®çš„åœ°ä»¥åŠå°æ€ªè¿½è¸ª
     /// </summary>
     /// <param name="playerName"></param>
     /// <param name="dis"></param>
@@ -38,7 +44,7 @@ public class Monster : MonoBehaviour
         player_Transform = GameObject.Find(playerName).GetComponent<Transform>();
         m_NavMeshAgent.SetDestination(player_Transform.position);
 
-        //ÉèÖÃĞ¡¹ÖµÄÍ£Ö¹¾àÀë.
+        //è®¾ç½®å°æ€ªçš„åœæ­¢è·ç¦».
         distance = dis;
         m_NavMeshAgent.stoppingDistance = distance;
 
@@ -46,7 +52,7 @@ public class Monster : MonoBehaviour
     }
 
     /// <summary>
-    /// ¸úËæµ¼º½.
+    /// è·Ÿéšå¯¼èˆª.
     /// </summary>
     IEnumerator FollowNavigation()
     {
@@ -55,6 +61,11 @@ public class Monster : MonoBehaviour
             if (Vector3.Distance(transform.position, player_Transform.position) > distance)
             {
                 m_NavMeshAgent.SetDestination(player_Transform.position);
+                animator.SetBool("IsAttack", false);
+            }
+            else
+            {
+                animator.SetBool("IsAttack", true);
             }
             yield return new WaitForSeconds(0.5f);
         }

@@ -1,18 +1,21 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// é™·é˜±æŠ€èƒ½çš„è§¦å‘åˆ¤å®š
+/// </summary>
 public class Trap : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Monster")
         {
-            //ÅĞ¶¨Ğ¡¹ÖÒÑËÀ
+            //åˆ¤å®šå°æ€ªå·²æ­»
             other.GetComponent<Monster>().Alive = false;
-            //´İ»ÙĞ¡¹Ö
+            //æ‘§æ¯å°æ€ª
             Destroy(other.gameObject);
-            //´İ»ÙÏİÚå±¾Éí
+            //æ‘§æ¯é™·é˜±æœ¬èº«
             Destroy(gameObject);
             
         }

@@ -1,10 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// è§’è‰²æ§åˆ¶æŠ€èƒ½é‡Šæ”¾çš„è„šæœ¬
+/// </summary>
 public class TrapController : MonoBehaviour
 {
-    //ÏİÚåÌØĞ§¶ÔÏó
+    //é™·é˜±ç‰¹æ•ˆå¯¹è±¡
     public GameObject prefab_Trap;
     void Update()
     {
@@ -15,17 +18,17 @@ public class TrapController : MonoBehaviour
     }
 
     /// <summary>
-    /// ÏİÚå¼¼ÄÜ,°´T¼üÊÍ·Å.
+    /// é™·é˜±æŠ€èƒ½,æŒ‰Té”®é‡Šæ”¾.
     /// </summary>
     private void Trap(Vector3 pos, GameObject effect)
     {
         GameObject temp = GameObject.Instantiate(effect, pos + new Vector3(0, 0.3f, 0), Quaternion.identity);
-        //¼ÓÅö×²Æ÷ºÍÏİÚå½Å±¾
+        //åŠ ç¢°æ’å™¨å’Œé™·é˜±è„šæœ¬
         temp.AddComponent<Trap>();
         SphereCollider sc = temp.AddComponent<SphereCollider>();
         sc.isTrigger = true;
         sc.radius = 0.8f;
-        //´İ»Ù
+        //æ‘§æ¯
         GameObject.Destroy(temp, 5);
     }
 

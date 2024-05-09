@@ -1,40 +1,42 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// è´Ÿè´£å°æ€ªçš„ç®¡ç†å’Œç”Ÿæˆ
+/// </summary>
 public class MonsterManager : MonoBehaviour
 {
-    private Transform[] points;         //Ğ¡¹ÖÉú³Éµã.
+    public static MonsterManager Instance;
+    private Transform[] points;         //å°æ€ªç”Ÿæˆç‚¹.
 
     private GameObject prefab_AAA;
     private GameObject prefab_BBB;
 
-    private List<GameObject> monsterList;   //Ğ¡¹Ö¹ÜÀí¼¯ºÏ.
+    private List<GameObject> monsterList;   //å°æ€ªç®¡ç†é›†åˆ.
 
     private string playerName;
+
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         playerName = "Player";
         points = GameObject.Find("MonsteCreaterPoints").GetComponent<Transform>().GetComponentsInChildren<Transform>();
 
-        prefab_AAA = Resources.Load<GameObject>("Moster(Close)");
-        prefab_BBB = Resources.Load<GameObject>("Moster(Long)");
+        prefab_AAA = Resources.Load<GameObject>("Monster(Goblin)");
+        prefab_BBB = Resources.Load<GameObject>("Monster(Goblin)");
         
         monsterList = new List<GameObject>();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CreateAllMonster();
-        }
-    }
 
     /// <summary>
-    /// Éú³ÉËùÓĞĞ¡¹Ö.
+    /// ç”Ÿæˆæ‰€æœ‰å°æ€ª.
     /// </summary>
-    private void CreateAllMonster()
+    public void CreateAllMonster()
     {
         for (int i = 1; i < points.Length; i++)
         {
@@ -50,29 +52,32 @@ public class MonsterManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Éú³Éµ¥¸öĞ¡¹Ö.
+    /// ç”Ÿæˆå•ä¸ªå°æ€ª.
     /// </summary>
     private void CreateMonster(GameObject prefab, Vector3 pos, float dis)
     {
         GameObject temp = GameObject.Instantiate(prefab, pos, Quaternion.identity);
-        //¶¯Ì¬µÄ¸øĞ¡¹ÖÌí¼Ó½Å±¾.
+        //åŠ¨æ€çš„ç»™å°æ€ªæ·»åŠ è„šæœ¬.
         Monster monster = temp.AddComponent<Monster>();
-        //µ÷ÓÃ×·×Ùº¯Êı
+        //è°ƒç”¨è¿½è¸ªå‡½æ•°
         monster.SetTarget(playerName, dis);
-        //ÔÚ³¡¾°×ÊÔ´²ãÃæÉÏ¹ÜÀíºÃÉú³ÉµÄĞ¡¹Ö.
+        //åœ¨åœºæ™¯èµ„æºå±‚é¢ä¸Šç®¡ç†å¥½ç”Ÿæˆçš„å°æ€ª.
         temp.GetComponent<Transform>().SetParent(transform);
-        Debug.Log(temp.name);
-        //°ÑÊµÀı»¯³öÀ´µÄĞ¡¹ÖÌí¼Óµ½¼¯ºÏÖĞ½øĞĞ¹ÜÀí.
+        //æŠŠå®ä¾‹åŒ–å‡ºæ¥çš„å°æ€ªæ·»åŠ åˆ°é›†åˆä¸­è¿›è¡Œç®¡ç†.
         monsterList.Add(temp);
     }
 
     /// <summary>
-    /// ¸üĞÂĞ¡¹ÖµÄ´æ´¢¼¯ºÏ.
+    /// æ›´æ–°å°æ€ªçš„å­˜å‚¨é›†åˆ.
     /// </summary>
     public void UpdateMonsterList(GameObject go)
     {
         monsterList.Remove(go);
-        Debug.Log("µ±Ç°¼¯ºÏÖĞĞ¡¹ÖµÄÊıÁ¿:" + monsterList.Count);
+        //å…³å¡æ€ªç‰©éƒ½è¢«æ¶ˆç­ï¼Œå¼€å¯ä¸‹ä¸€å…³
+        if (monsterList.Count == 0)
+        {
+            HouseManager.Instance.ToWallOpen(2);
+        }
     }
 
 
