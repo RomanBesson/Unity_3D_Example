@@ -1,0 +1,50 @@
+﻿[
+    {
+        "Type": [
+            {
+                "ItemName": "M武器1",
+                "ItemPrice": 1001
+            },
+            {
+                "ItemName": "K武器2",
+                "ItemPrice": 1002
+            }
+        ]
+    },
+    {
+        "Type": [
+            {
+                "ItemName": "C时装1",
+                "ItemPrice": 2001
+            },
+            {
+                "ItemName": "O时装2",
+                "ItemPrice": 2002
+            }
+        ]
+    },
+    {
+        "Type": [
+            {
+                "ItemName": "D宝箱1",
+                "ItemPrice": 2001
+            },
+            {
+                "ItemName": "E宝箱2",
+                "ItemPrice": 2002
+            }
+        ]
+    },
+    {
+        "Type": [
+            {
+                "ItemName": "M碎片1",
+                "ItemPrice": 2001
+            },
+            {
+                "ItemName": "K碎片2",
+                "ItemPrice": 2002
+            }
+        ]
+    }
+]

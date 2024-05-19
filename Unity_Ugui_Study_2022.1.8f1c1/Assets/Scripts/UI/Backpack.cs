@@ -9,7 +9,7 @@ public class Backpack : MonoBehaviour {
     private RectTransform m_RectTransform;
 
 	void Start () {
-        prefab_Item = Resources.Load<GameObject>("Item");
+        prefab_Item = Resources.Load<GameObject>("UI/Item");
         m_RectTransform = GameObject.Find("Grid").GetComponent<RectTransform>();
         CreateAllItem();
 	}
