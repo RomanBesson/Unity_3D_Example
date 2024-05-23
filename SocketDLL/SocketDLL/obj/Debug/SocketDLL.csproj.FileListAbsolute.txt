@@ -1,0 +1,11 @@
+D:\U3D_Project\Socket\36\SocketDLL\SocketDLL\bin\Debug\SocketDLL.dll
+D:\U3D_Project\Socket\36\SocketDLL\SocketDLL\bin\Debug\SocketDLL.pdb
+D:\U3D_Project\Socket\36\SocketDLL\SocketDLL\obj\Debug\SocketDLL.csprojResolveAssemblyReference.cache
+D:\U3D_Project\Socket\36\SocketDLL\SocketDLL\obj\Debug\SocketDLL.dll
+D:\U3D_Project\Socket\36\SocketDLL\SocketDLL\obj\Debug\SocketDLL.pdb
+E:\codeEnvironment\Unity\Unity_3D\SocketDLL\SocketDLL\bin\Debug\SocketDLL.dll
+E:\codeEnvironment\Unity\Unity_3D\SocketDLL\SocketDLL\bin\Debug\SocketDLL.pdb
+E:\codeEnvironment\Unity\Unity_3D\SocketDLL\SocketDLL\obj\Debug\SocketDLL.csproj.AssemblyReference.cache
+E:\codeEnvironment\Unity\Unity_3D\SocketDLL\SocketDLL\obj\Debug\SocketDLL.csproj.CoreCompileInputs.cache
+E:\codeEnvironment\Unity\Unity_3D\SocketDLL\SocketDLL\obj\Debug\SocketDLL.dll
+E:\codeEnvironment\Unity\Unity_3D\SocketDLL\SocketDLL\obj\Debug\SocketDLL.pdb
