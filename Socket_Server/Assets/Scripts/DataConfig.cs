@@ -6,5 +6,5 @@ using System.Collections.Generic;
 /// </summary>
 public class DataConfig
 {
-    public static string IP_DATA = "";
+    public static string IP_DATA = "*";
 }
