@@ -1,0 +1,11 @@
+D:\U3D_Project\Lua\21\MKLua\one\bin\Debug\one.exe.config
+D:\U3D_Project\Lua\21\MKLua\one\bin\Debug\LuaInterface.dll
+D:\U3D_Project\Lua\21\MKLua\one\bin\Debug\luanet.dll
+D:\U3D_Project\Lua\21\MKLua\one\bin\Debug\one.exe
+D:\U3D_Project\Lua\21\MKLua\one\bin\Debug\one.pdb
+D:\U3D_Project\Lua\21\MKLua\one\obj\Debug\one.csprojResolveAssemblyReference.cache
+D:\U3D_Project\Lua\21\MKLua\one\obj\Debug\one.exe
+D:\U3D_Project\Lua\21\MKLua\one\obj\Debug\one.pdb
+D:\U3D_Project\Lua\22\MKLua\one\bin\Debug\one.exe.config
+D:\U3D_Project\Lua\22\MKLua\one\obj\Debug\one.exe
+D:\U3D_Project\Lua\22\MKLua\one\obj\Debug\one.pdb

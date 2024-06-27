@@ -1,0 +1,12 @@
+D:\U3D_Project\Lua\22\MKLua\two\bin\Debug\two.exe.config
+D:\U3D_Project\Lua\22\MKLua\two\bin\Debug\LuaInterface.dll
+D:\U3D_Project\Lua\22\MKLua\two\bin\Debug\luanet.dll
+D:\U3D_Project\Lua\22\MKLua\two\bin\Debug\two.exe
+D:\U3D_Project\Lua\22\MKLua\two\bin\Debug\two.pdb
+D:\U3D_Project\Lua\22\MKLua\two\obj\Debug\two.csprojResolveAssemblyReference.cache
+D:\U3D_Project\Lua\22\MKLua\two\obj\Debug\two.exe
+D:\U3D_Project\Lua\22\MKLua\two\obj\Debug\two.pdb
+D:\U3D_Project\Lua\22\MKLua\two\bin\Debug\Monkey.lua
+D:\U3D_Project\Lua\23\MKLua\two\bin\Debug\two.exe.config
+D:\U3D_Project\Lua\23\MKLua\two\obj\Debug\two.exe
+D:\U3D_Project\Lua\23\MKLua\two\obj\Debug\two.pdb

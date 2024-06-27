@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 4049095424
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: pedestal.ab
+      Dependencies: {}
+    Info_1:
+      Name: player/player1.ab
+      Dependencies: {}
